@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  py
+
+  Sample SAM Template for py
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 30
+    Environment:
+      Variables:
+        TELEGRAM_API_KEY: "$TELEGRAM_API_KEY"
+
+Resources:
+  SendNotification:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: sendNotification/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      FunctionName: Lenovo-sendNotification
+      Events:
+        Scheduled:
+          Type: Schedule
+          Properties:
+            Description: scrape lenovo and send telegram message
+            Enabled: True
+            Name: scraper
+            Schedule: cron(0 10,17,22 * * ? *)
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  SendNotificationFunction:
+    Description: "scrape lenovo and send telegram message Function ARN"
+    Value: !GetAtt SendNotification.Arn
+  SendNotificationIamRole:
+    Description: "Implicit IAM Role created for SendNotification function"
+    Value: !GetAtt SendNotification.Arn

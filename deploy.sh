@@ -1,0 +1,20 @@
+
+ENV=setenv
+SAMCONFIG=samconfig.toml
+PREBUILD=prebuild.yaml
+if [ -f "$ENV" ] && [ -f "$PREBUILD" ]; then
+    echo $ENV and $PREBUILD found! replacing variables 
+    . setenv
+    envsubst < $PREBUILD > template.yaml
+    if [ -f "$SAMCONFIG" ]; then
+        echo $SAMCONFIG found! deploying using existing configs
+        sam build && sam deploy
+    else 
+        echo $SAMCONFIG not found! executing a guided sam deploy
+        sam build && sam deploy --guided
+    fi
+    rm -rf template.yaml
+else 
+    echo you must have $ENV and $PREBUILD files inside the root dir
+    echo $ENV file is ignored in commits to prevent credentials from leaking
+fi

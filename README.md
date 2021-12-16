@@ -3,11 +3,16 @@ I use this bot to get filtered twitter notifications from a specific account wit
 
 Me don't like Twitter
 ## Must know
-- Scripts are written for linux shell, I've not tried running them on windows
+- Scripts are written for linux shell, I've not tried running them on windows or mac
 ### For the deploy and tests to work you must have installed
  - aws cli
  - aws sam cli
  - your aws credentials and configuration in ~/.aws folder (the user will need resources and roles creation permission)
+ - telegram bot, and its token
+ - twitter app, and its token
+ - dynamodb table
+ - 2 telegram chat ids (@name if they are public, or id number if they are private)
+ - setenv file (use setenv.example to see how to make it)
 
 ## Test local
  - `. local-test sendNotification`

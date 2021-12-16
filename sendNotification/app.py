@@ -49,8 +49,7 @@ def send_telegram(chat_id, message):
         f"https://api.telegram.org/bot{telegram_api_key}/sendMessage",
         json={
             'chat_id': chat_id,
-            'text': message,
-            'disable_web_page_preview': True
+            'text': message
         })
 
 def get_tweets(since_id = False):

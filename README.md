@@ -15,3 +15,6 @@
  - `ACCOUNT_ID`: Twitter account id to watch (numeric id)
  - `GENERAL_CHAT_ID`: General chat id (telegram) (unfiltered messages)
  - `ALERTS_CHAT_ID`: Alerts chat id (telegram)
+
+## TODO
+ - Google translation on the fly

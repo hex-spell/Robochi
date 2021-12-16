@@ -1,4 +1,14 @@
 # Robochi
+I use this bot to get filtered twitter notifications from a specific account without using Twitter
+
+Me don't like Twitter
+## Must know
+- Scripts are written for linux shell, I've not tried running them on windows
+### For the deploy and tests to work you must have installed
+ - aws cli
+ - aws sam cli
+ - your aws credentials and configuration in ~/.aws folder (the user will need resources and roles creation permission)
+
 ## Test local
  - `. local-test sendNotification`
 
@@ -18,3 +28,5 @@
 
 ## TODO
  - Google translation on the fly
+ - Clean requirements.txt
+ - Make dynamodb table creation automatic from prebuild.yaml template resources

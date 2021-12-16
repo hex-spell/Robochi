@@ -112,3 +112,5 @@ https://twitter.com/i/web/status/{entry['id']}"""
         "statusCode": 200,
         "body": "finished",
     }
+
+if __name__ == "__main__": lambda_handler("", "")

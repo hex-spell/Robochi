@@ -84,7 +84,7 @@ def lambda_handler(event, context):
             for entry in result["data"]:
                 message = f"""{entry["text"]}
 
-            https://twitter.com/i/web/status/{entry['id']}"""
+https://twitter.com/i/web/status/{entry['id']}"""
 
                 print(message)
 
@@ -113,5 +113,3 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body": "finished",
     }
-
-lambda_handler("", "")

@@ -37,7 +37,7 @@ Resources:
             Description: scrape ItalyinMDP twitter
             Enabled: True
             Name: cittadaniza
-            Schedule: cron(0 10,17,22 * * ? *)
+            Schedule: cron(0/15 * * * ? *)
   
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda

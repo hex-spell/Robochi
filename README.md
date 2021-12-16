@@ -1,12 +1,12 @@
 # Robochi
 ## Test local
- - `. /local-test sendNotification`
+ - `. local-test sendNotification`
 
 ## Test remote
- - `. /remote-test sendNotification`
+ - `. remote-test sendNotification`
 
 ## Deploy
- - `. /deploy`
+ - `. deploy`
 
 ## Environment variables
  - `TELEGRAM_API_KEY`: Telegram api key (bot)

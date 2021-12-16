@@ -11,7 +11,7 @@ It stays within the **aws free tier**, if you deploy it yourself it will be free
 
 ## Must know
 
-- Scripts are written for linux shell, I've not tried running them on windows or mac
+- Scripts are written for linux shell, I haven't tried running them on windows or mac
 
 ### For the deploy and tests to work you must have installed
 

@@ -132,3 +132,6 @@ setenv
 template.yaml
 .aws-sam
 samconfig.toml
+
+test.py
+out.txt

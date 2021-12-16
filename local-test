@@ -1,0 +1,7 @@
+ENV=setenv
+FUNCTION=$1/app.py
+if [ -f "$ENV" ] && [ -f "$FUNCTION" ]; then
+    . setenv && python $FUNCTION
+else
+    echo "Function $1 ($FUNCTION) not found."
+fi

@@ -8,10 +8,10 @@ if [ -f "$ENV" ] && [ -f "$PREBUILD" ]; then
     envsubst < $PREBUILD > template.yaml
     if [ -f "$SAMCONFIG" ]; then
         echo $SAMCONFIG found! deploying using existing configs
-        sam build && sam deploy
+        sam build && sam deploy --capabilities CAPABILITY_NAMED_IAM
     else 
         echo $SAMCONFIG not found! executing a guided sam deploy
-        sam build && sam deploy --guided
+        sam build && sam deploy --guided --capabilities CAPABILITY_NAMED_IAM
     fi
     rm -rf template.yaml
 else 

@@ -12,6 +12,11 @@ Globals:
     Environment:
       Variables:
         TELEGRAM_API_KEY: "$TELEGRAM_API_KEY"
+        TWITTER_TOKEN: "$TWITTER_TOKEN"
+        ACCOUNT_ID: "$ACCOUNT_ID"
+        TABLE_NAME: "$TABLE_NAME"
+        GENERAL_CHAT_ID: "$GENERAL_CHAT_ID"
+        ALERTS_CHAT_ID: "$ALERTS_CHAT_ID"
 
 Resources:
   SendNotification:
@@ -19,23 +24,43 @@ Resources:
     Properties:
       CodeUri: sendNotification/
       Handler: app.lambda_handler
-      Runtime: python3.8
-      FunctionName: Lenovo-sendNotification
+      Runtime: python3.9
+      FunctionName: Robochi-sendNotification
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
       Events:
         Scheduled:
           Type: Schedule
           Properties:
-            Description: scrape lenovo and send telegram message
+            Description: scrape ItalyinMDP twitter
             Enabled: True
-            Name: scraper
+            Name: cittadaniza
             Schedule: cron(0 10,17,22 * * ? *)
+  
+  LambdaExecutionRole:
+    Description: Creating service role in IAM for AWS Lambda
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub 'Robochi-Execution-${Stage}'
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: [lambda.amazonaws.com]
+          Action: sts:AssumeRole
+      Path: /
+      ManagedPolicyArns:
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonDynamoDBFullAccess'
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   SendNotificationFunction:
-    Description: "scrape lenovo and send telegram message Function ARN"
+    Description: "scrape ItalyinMDP twitter Function ARN"
     Value: !GetAtt SendNotification.Arn
   SendNotificationIamRole:
     Description: "Implicit IAM Role created for SendNotification function"

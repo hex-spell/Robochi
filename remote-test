@@ -1,0 +1,1 @@
+aws lambda invoke --function-name Robochi-$1 out.txt

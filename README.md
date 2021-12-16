@@ -13,10 +13,10 @@ It stays within the **aws free tier**, if you deploy it yourself it will be free
 
 - Scripts are written for linux shell, I haven't tried running them on windows or mac
 
-### For the deploy and tests to work you must have installed
+### For the deploy and tests to work you must have first
 
-- aws cli
-- aws sam cli
+- aws cli installed
+- aws sam cli installed
 - your aws credentials and configuration in ~/.aws folder (the user will need resources and roles creation permission)
 - telegram bot, and its token
 - twitter app, and its token

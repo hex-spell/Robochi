@@ -2,6 +2,8 @@
 I use this bot to get filtered twitter notifications from a specific account without using Twitter
 
 Me don't like Twitter
+
+It stays within the aws free tier, if you deploy it yourself it will be free to use forever (as far as I've calculated)
 ## Must know
 - Scripts are written for linux shell, I've not tried running them on windows or mac
 ### For the deploy and tests to work you must have installed

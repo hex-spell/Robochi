@@ -1,7 +1,4 @@
 # Robochi
-| <b>Look! My scraper bots family</b> |
-| :------------------------------------: |
-|      ![space-1.jpg](robochi.png)       |
 
 I use this bot to get filtered twitter notifications from a specific account without using Twitter
 
@@ -50,4 +47,8 @@ It stays within the **aws free tier**, if you deploy it yourself it will be free
 - Google translation on the fly
 - Clean requirements.txt
 - Make dynamodb table creation automatic from prebuild.yaml template resources
+
+| <b>Look! My scraper bots family</b> |
+| :------------------------------------: |
+|      ![space-1.jpg](robochi.png)       |
 

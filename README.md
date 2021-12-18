@@ -1,5 +1,5 @@
 # Robochi
-| <b>Ho fatto un Roboci, mira sei tu</b> |
+| <b>Look! My scrapbots family</b> |
 | :------------------------------------: |
 |      ![space-1.jpg](robochi.png)       |
 

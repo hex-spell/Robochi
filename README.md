@@ -13,7 +13,7 @@ It stays within the **aws free tier**, if you deploy it yourself it will be free
 
 - Scripts are written for linux shell, I haven't tried running them on windows or mac
 
-### For the deploy and tests to work you must have first
+### For the deploy and tests to work you must first have
 
 - aws cli installed
 - aws sam cli installed

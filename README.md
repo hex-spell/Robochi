@@ -1,8 +1,6 @@
 # Robochi
 
-I use this bot to get filtered twitter notifications from a specific account without using Twitter
-
-Me don't like Twitter
+I use this bot to get filtered twitter notifications from a specific account without using the twitter app
 
 It stays within the **aws free tier** usage rates, if you deploy it yourself it will be free to use forever (as far as I've calculated)
 
